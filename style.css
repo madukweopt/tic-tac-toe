@@ -5,6 +5,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: sans-serif;
 }
 :root {
     box-sizing: border-box;
@@ -27,6 +28,7 @@ body {
     align-items: center;
     box-sizing: border-box;
     border-collapse: collapse;
+    font-size: 100px;
 }
 
 #one,
@@ -51,4 +53,18 @@ body {
 #six,
 #nine {
     border-right: none;
+}
+.player-one {
+    position: absolute;
+    left: 150px;
+
+}
+.player-two {
+    position: absolute;
+    right: 200px;
+}
+
+.player-one,
+.player-two {
+    font-size: 30px;
 }
