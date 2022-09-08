@@ -20,3 +20,28 @@ const gameBoardModule = (function() {
 })();
 
 
+const controlDisplay = (function() {
+    let turnToPlay = true;
+
+    const allSquares = document.querySelectorAll('.box')
+
+    allSquares.forEach(square => {
+        square.addEventListener('click', () => {
+            if(turnToPlay) {
+            square.textContent = gameBoardModule.gameBoard[0].marker
+            turnToPlay = false;
+
+            }else{
+                turnToPlay = true;
+                square.textContent = gameBoardModule.gameBoard[1].marker
+               
+            }
+            
+        })
+    })
+
+})();
+
+const controlGame = (function() {
+
+})();
