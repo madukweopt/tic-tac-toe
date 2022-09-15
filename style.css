@@ -68,3 +68,7 @@ body {
 .player-two {
     font-size: 30px;
 }
+
+.disable {
+    pointer-events: none;
+}

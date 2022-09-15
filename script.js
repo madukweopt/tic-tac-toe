@@ -13,41 +13,77 @@ const gameBoardModule = (function() {
     return {gameBoard}
 })();
 
+const controlGame = (function() {
+    const allSquares = Array.from(document.querySelectorAll('.box'))
+    let display = document.querySelector('.display');
+   
+    function checkWin() {                       
+        if(allSquares[0].textContent == 'X' && allSquares[1].textContent == 'X' && allSquares[2].textContent == 'X') {
+           display.textContent = `${allSquares[0].textContent} wins`
+           document.querySelectorAll(".box").forEach((square) => {
+           square.classList.add('disable')           
+
+        })
+     }
+       
+    }
+    return{checkWin}
+
+})();
+
 const controlDisplay = (function() {
     let turnToPlay = true;
-    const allSquares = document.querySelectorAll('.box')
+    let isOver = false;
+    const allSquares = Array.from(document.querySelectorAll('.box'))
     let display = document.querySelector('.display');
-    allSquares.forEach(square => {
+    
+        allSquares.forEach(square => {  
+
+            square.addEventListener('click', addMark)
         
-        square.addEventListener('click', () => {
+
+        function addMark() {
             if(square.textContent !== "") return
             if(turnToPlay) {
             square.textContent = gameBoardModule.gameBoard[0].marker
             display.textContent = `is ${gameBoardModule.gameBoard[1].marker}'s turn to play`
             turnToPlay = false;
+           controlGame.checkWin()
+            
 
             }else{
                 turnToPlay = true;
                 square.textContent = gameBoardModule.gameBoard[1].marker
                 display.textContent = `is ${gameBoardModule.gameBoard[0].marker}'s turn to play`
-               
-            }          
+              controlGame.checkWin()
+            }
+        }
+            controlGame.checkWin()
+            
         })  
-    })
-    
-    const refresh = function() {
-        allSquares.forEach(square => {
+
+        const refresh = function() {
+            allSquares.forEach(square => {
             square.textContent = ''
-        })   
-    }
+            document.querySelectorAll(".box").forEach((square) => {
+                square.classList.remove('disable')
+            })      
+          })   
+        }
 
-    const refreshBoard = function() {
-        const button = document.querySelector('button')
-        button.addEventListener('click', refresh);
-    }
-    refreshBoard()
+        const refreshBoard = function() {
+           const button = document.querySelector('button')
+           button.addEventListener('click', refresh);
+        }      
+        refreshBoard()
+
+    return{display,
+        allSquares
+           
+          }
+        
 })();
 
-const controlGame = (function() {
 
-})();
+
+
