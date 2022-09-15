@@ -6,12 +6,13 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
+    background-color: rgb(224, 189, 189);
 }
 :root {
     box-sizing: border-box;
 }
 .container {
-    margin: 20px;
+    margin: 15px;
     width: 450px;
     height: 450px;
     display: flex;
@@ -69,6 +70,15 @@ body {
     font-size: 30px;
 }
 
-.disable {
-    pointer-events: none;
+.display {
+  text-align: center;  
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(160, 131, 184);
+    font-size: 25px;
+
 }
