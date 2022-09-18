@@ -1,5 +1,5 @@
 # tic-tac-toe
-[view live here] (https://madukweopt.github.io/tic-tac-toe/)
+.[view live here].(https://madukweopt.github.io/tic-tac-toe/)
 
 By Madukwe Pascal
 
