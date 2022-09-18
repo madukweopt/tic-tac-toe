@@ -1,5 +1,4 @@
-# tic-tac-toe
-[Live Demo](https://madukweopt.github.io/tic-tac-toe/)
+# tic-tac-toe [Live Demo](https://madukweopt.github.io/tic-tac-toe/)
 
 By Madukwe Pascal
 
