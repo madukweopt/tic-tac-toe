@@ -6,7 +6,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: rgb(204, 113, 96);
+    background-color: rgb(201, 200, 211);
 }
 
 :root {
@@ -71,6 +71,6 @@ button {
     width: 150px;
     padding: 5px;
     border-radius: 10px;
-    background-color: rgb(20, 80, 105);
+    background-color: rgba(20, 80, 105, 0.582);
     font-size: 25px;
 }
