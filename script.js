@@ -17,90 +17,127 @@ const gameBoardModule = (function() {
 const controlGame = (function() {
     const allSquares = Array.from(document.querySelectorAll('.box'))
     let display = document.querySelector('.display');
-    
+    let playerOne = document.querySelector('#score-one');
+    let playerTwo = document.querySelector('#score-two');
+
+    const addScore = () => {
+        if(display.textContent === 'X wins the game') {
+            playerOne.textContent++
+
+        }else if(display.textContent === 'O wins the game') {
+            playerTwo.textContent++
+        }
+    }
+
+    const removeEvent = () => {
+        allSquares.forEach(square => {
+            square.style.pointerEvents = 'none'
+             return;
+            })
+    }
+
     const checkWin = function() {
         
         if(allSquares[0].textContent === 'X' && allSquares[1].textContent ==='X' && allSquares[2].textContent === 'X' || allSquares[0].textContent === 'O' && allSquares[1].textContent === 'O' && allSquares[2].textContent === 'O') {
+           let matched = allSquares.slice(0, 3);
            display.textContent = `${allSquares[1].textContent} wins the game`
+           console.log(matched)  
            display.style.color = 'blue'
            display.style.fontSize = '25px'
-           allSquares.forEach(square => {
-           square.style.pointerEvents = 'none'
-            return;
+           addScore()
+           removeEvent()
+           matched.forEach(match => {
+            match.style.backgroundColor = 'yellow'
            })
+           
+           
           
         }else if(allSquares[3].textContent === 'X' && allSquares[4].textContent === 'X' && allSquares[5].textContent === 'X' || allSquares[3].textContent === 'O' && allSquares[4].textContent === 'O' && allSquares[5].textContent === 'O'){
+            let matched = allSquares.slice(3, 6);
             display.textContent = `${allSquares[3].textContent} wins the game`
             display.style.color = 'blue'
             display.style.fontSize = '25px'
-            allSquares.forEach(square => {
-            square.style.pointerEvents = 'none'
-             return;
-            }) 
+            addScore()
+            removeEvent()
+            matched.forEach(match => {
+                match.style.backgroundColor = 'yellow'
+               })
+
 
         }else if(allSquares[6].textContent === 'X' && allSquares[7].textContent === 'X' && allSquares[8].textContent === 'X' || allSquares[6].textContent === 'O' && allSquares[7].textContent === 'O' && allSquares[8].textContent === 'O'){
+            let matched = allSquares.slice(6, 9);
             display.textContent = `${allSquares[6].textContent} wins the game`
             display.style.color = 'blue'
             display.style.fontSize = '25px'
-            allSquares.forEach(square => {
-            square.style.pointerEvents = 'none'
-             return;
-            }) 
+            addScore()
+            removeEvent()
+            matched.forEach(match => {
+                match.style.backgroundColor = 'yellow'
+               })
 
         }else if(allSquares[0].textContent === 'X' && allSquares[3].textContent === 'X' && allSquares[6].textContent === 'X' || allSquares[0].textContent === 'O' && allSquares[3].textContent === 'O' && allSquares[6].textContent === 'O'){
             display.textContent = `${allSquares[0].textContent} wins the game`
             display.style.color = 'blue'
             display.style.fontSize = '25px'
-            allSquares.forEach(square => {
-            square.style.pointerEvents = 'none'
-             return;
-            })
+            allSquares[0].style.backgroundColor = 'yellow'
+            allSquares[3].style.backgroundColor =  'yellow'
+            allSquares[6].style.backgroundColor = 'yellow'
+            addScore()
+            removeEvent()
 
         }else if(allSquares[1].textContent === 'X' && allSquares[4].textContent === 'X' && allSquares[7].textContent === 'X' || allSquares[1].textContent === 'O' && allSquares[4].textContent === 'O' && allSquares[7].textContent === 'O'){
             display.textContent = `${allSquares[1].textContent} wins the game`
             display.style.color = 'blue'
             display.style.fontSize = '25px'
-            allSquares.forEach(square => {
-            square.style.pointerEvents = 'none'
-             return;
-            })
+            allSquares[1].style.backgroundColor = 'yellow'
+            allSquares[4].style.backgroundColor =  'yellow'
+            allSquares[7].style.backgroundColor = 'yellow'
+            addScore()
+            removeEvent()
 
         } else if(allSquares[2].textContent === 'X' && allSquares[5].textContent === 'X' && allSquares[8].textContent === 'X' || allSquares[2].textContent === 'O' && allSquares[5].textContent === 'O' && allSquares[8].textContent === 'O') {
             display.textContent = `${allSquares[2].textContent} wins the game`
             display.style.color = 'blue'
             display.style.fontSize = '25px'
-            allSquares.forEach(square => {
-            square.style.pointerEvents = 'none'
-             return;
-            })
+            allSquares[2].style.backgroundColor = 'yellow'
+            allSquares[5].style.backgroundColor =  'yellow'
+            allSquares[8].style.backgroundColor = 'yellow'
+            addScore()
+            removeEvent()
 
         } else if(allSquares[0].textContent === 'X' && allSquares[4].textContent === 'X' && allSquares[8].textContent === 'X' || allSquares[0].textContent === 'O' && allSquares[4].textContent === 'O' && allSquares[8].textContent === 'O') {
             display.textContent = `${allSquares[0].textContent} wins the game`
             display.style.color = 'blue'
             display.style.fontSize = '25px'
-            allSquares.forEach(square => {
-            square.style.pointerEvents = 'none'
-             return;
-            })
+            allSquares[0].style.backgroundColor = 'yellow'
+            allSquares[4].style.backgroundColor =  'yellow'
+            allSquares[8].style.backgroundColor = 'yellow'
+            addScore()
+           removeEvent()
 
         }else if(allSquares[2].textContent === 'X' && allSquares[4].textContent === 'X' && allSquares[6].textContent === 'X' || allSquares[2].textContent === 'O' && allSquares[4].textContent === 'O' && allSquares[6].textContent === 'O') {
             display.textContent = `${allSquares[2].textContent} wins the game`
             display.style.color = 'blue'
             display.style.fontSize = '25px'
-            allSquares.forEach(square => {
-            square.style.pointerEvents = 'none'
-             return;
-            })
+            allSquares[2].style.backgroundColor = 'yellow'
+            allSquares[4].style.backgroundColor =  'yellow'
+            allSquares[6].style.backgroundColor = 'yellow'
+            addScore()
+            removeEvent()
 
         }else if(allSquares.every(square => square.textContent !== '')){
             display.textContent = "IT'S A DRAW"
             display.style.color = 'white'
             display.style.fontSize = '25px'
         } 
+        controlDisplay.addMark
 
-}
+    }
 
-    return{checkWin}
+    return{checkWin,
+           playerOne,
+           playerTwo
+        }
 
 })();
 
@@ -110,48 +147,52 @@ const controlDisplay = (function() {
     const allSquares = Array.from(document.querySelectorAll('.box'))
     let display = document.querySelector('.display');
     
-    allSquares.forEach(square => {  
+    function addMark() {
+        allSquares.forEach(square => {  
 
-        square.addEventListener('click', function() {
-    
-            if(square.textContent !== "") return
-            if(turnToPlay) {
-            square.textContent = gameBoardModule.gameBoard[0].marker
-            display.textContent = `Is ${gameBoardModule.gameBoard[1].marker}'s turn to play`   
-            turnToPlay = false;
-            controlGame.checkWin()
-            refreshBoard()    
+            square.addEventListener('click', () => {        
             
-            }else{ 
-                square.textContent = gameBoardModule.gameBoard[1].marker
-                display.textContent = `Is ${gameBoardModule.gameBoard[0].marker}'s turn to play`   
-                turnToPlay = true;
+                if(square.textContent !== "") return
+                if(turnToPlay) {
+                square.textContent = gameBoardModule.gameBoard[0].marker
+                display.textContent = `Is ${gameBoardModule.gameBoard[1].marker}'s turn to play`   
+                turnToPlay = false;
                 controlGame.checkWin()
-                refreshBoard()
+                refreshBoard()    
                 
-            }
-                    
-           })  
-        })
+                }else{ 
+                    square.textContent = gameBoardModule.gameBoard[1].marker
+                    display.textContent = `Is ${gameBoardModule.gameBoard[0].marker}'s turn to play`   
+                    turnToPlay = true;
+                    controlGame.checkWin()
+                    refreshBoard()             
+            } 
+        })          
+      })
+    }
+    addMark()
 
     const refresh = function() {
+        display.textContent = ''
         allSquares.forEach(square => {
-        square.textContent = ''
-        
-        })   
+        square.textContent = '' 
+        square.style.pointerEvents = 'fill';
+        square.style.backgroundColor = 'white';   
+        })
+             
     }
 
     const refreshBoard = function() {
         const button = document.querySelector('button')
         button.addEventListener('click', refresh);
     }  
-        
-    refreshBoard()
 
     return{display,
-        allSquares          
+        allSquares,
+        refreshBoard,
+        addMark         
           }
-        
+             
 })();
 
 
