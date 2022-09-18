@@ -6,17 +6,21 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: rgb(224, 189, 189);
+    background-color: rgb(204, 113, 96);
 }
+
 :root {
     box-sizing: border-box;
 }
 
 .heading {
-    background-color: yellowgreen;
-    
-    
+    color: rgb(20, 80, 105);
+    font-size: 45px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 8px;  
 }
+
 .container {
     background-color: white;
     margin: 15px;
@@ -41,37 +45,14 @@ body {
 }
 
 .box:hover {
-    background-color: rgba(0, 0, 255, 0.295);
+    background-color: rgba(20, 80, 105, 0.219);
 }
 
-#one,
-#four,
-#seven {
-    border-left: none;
-}
-
-#one,
-#two,
-#three {
-    border-top: none;
-}
-
-#seven,
-#eight,
-#nine {
-    border-bottom: none;
-}
-
-#three,
-#six,
-#nine {
-    border-right: none;
-}
 .player-one {
     position: absolute;
     left: 150px;
-
 }
+
 .player-two {
     position: absolute;
     right: 200px;
@@ -88,9 +69,8 @@ body {
 
 button {
     width: 150px;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
-    background-color: rgb(160, 131, 184);
+    background-color: rgb(20, 80, 105);
     font-size: 25px;
-
 }
