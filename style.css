@@ -74,3 +74,9 @@ button {
     background-color: rgba(20, 80, 105, 0.582);
     font-size: 25px;
 }
+
+p {
+    display: flex;
+}
+
+
