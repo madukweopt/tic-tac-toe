@@ -24,17 +24,17 @@ body {
 .container {
     background-color: white;
     margin: 15px;
-    width: 450px;
-    height: 450px;
-    display: flex;
-    flex-wrap: wrap;
+    width: 400px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     border: 4px solid black;
+    margin-top: 100px;
 
 }
 
 .box {
-    height: 150px;
-    width: 150px;
     border: 4px solid black;
     display: flex;
     justify-content: center;
@@ -50,17 +50,17 @@ body {
 
 .player-one {
     position: absolute;
-    left: 150px;
+    left: 3%;
 }
 
 .player-two {
     position: absolute;
-    right: 200px;
+    right: 3%;
 }
 
 .player-one,
 .player-two {
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 
 .display {
@@ -77,6 +77,37 @@ button {
 
 p {
     display: flex;
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 300px;
+        height: 300px;
+        position: relative;
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        overflow: hidden;
+    }
+    .player-one,
+    .player-two {
+        font-size: 1rem;
+        position: absolute;
+        top: 20%;      
+    }
+    .box {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 500px) {
+    .player-one,
+    .player-two {
+        font-size: 1.3rem;
+        position: absolute;
+        top: 15%;
+    }
 }
 
 
